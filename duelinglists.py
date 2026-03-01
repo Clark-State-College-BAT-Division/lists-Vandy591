@@ -19,3 +19,43 @@
 #Player two's highest number is 8 at index 1
 #Player one's lowest number is 1 at index 4
 #Player two's lowest number is 1 at index 5
+
+import random
+player1 = []
+player2 = []
+for i in range(10):
+    player1.append(random.randint(1, 50)) 
+    player2.append(random.randint(1, 50))
+player1_wins = 0
+player2_wins = 0
+for i in range(10):
+    if player1[i] > player2[i]:
+        player1_wins += 1
+    elif player2[i] > player1[i]:
+        player2_wins += 1
+p1highest = player1[0]
+p1highest_index = 0
+for i in range(10):
+    if player1[i] > p1highest:
+        p1highest = player1[i]
+        p1highest_index = i
+p2highest = player2[0]
+p2highest_index = 0
+for i in range(10):
+    if player2[i] > p2highest:
+        p2highest = player2[i]
+        p2highest_index = i
+p1lowest = player1[0]
+p1lowest_index = 0
+for i in range(10):
+    if player1[i] < p1lowest:
+        p1lowest = player1[i]
+        p1lowest_index = i
+p2lowest = player2[0]
+p2lowest_index = 0
+for i in range(10):
+    if player2[i] < p2lowest:
+        p2lowest = player2[i]
+        p2lowest_index = i
+print("Player one's lowest number is", p1lowest, "at index", p1lowest_index)
+print("Player two's lowest number is", p2lowest, "at index", p2lowest_index)
